@@ -18,4 +18,13 @@ public class UserRegistration {
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
+    /* methodlastName to validation of the name value
+     * @param name return boolean value
+     */
+    public boolean lastName(String name){
+        String regex = "^[A-Z]{1}[a-z]{2,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
 }

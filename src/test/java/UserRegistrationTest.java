@@ -11,4 +11,9 @@ public class UserRegistrationTest {
        boolean result = userRegistration.firstName("Abcd");
        Assert.assertTrue(result);
     }
+    @Test
+    public void giveLastName_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.lastName("Abcd");
+        Assert.assertTrue(result);
+    }
 }

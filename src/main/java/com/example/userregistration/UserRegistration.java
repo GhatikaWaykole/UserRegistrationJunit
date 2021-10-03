@@ -31,8 +31,8 @@ public class UserRegistration {
      * @param name return boolean value
      */
     public boolean emailValidation(String name){
-        String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
-        pattern = Pattern.compile(regx);
+        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
+        pattern = Pattern.compile(regex);
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
@@ -40,9 +40,18 @@ public class UserRegistration {
      * @param name return boolean value
      */
     public boolean numberValidation(String number){
-        String regx = "^[0-9]{2}\\s[0-9]{10}";
-        pattern = Pattern.compile(regx);
+        String regex = "^[0-9]{2}\\s[0-9]{10}";
+        pattern = Pattern.compile(regex);
         matcher = pattern.matcher(number);
+        return matcher.matches();
+    }
+    /* methodlogin to validation of login value should have minimum eight value data
+     * @param name return boolean value
+     */
+    public boolean loginValidation(String name){
+        String regex = "[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
         return matcher.matches();
     }
 }

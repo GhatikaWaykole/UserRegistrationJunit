@@ -27,10 +27,22 @@ public class UserRegistration {
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
+    /* method to validation of the name value
+     * @param name return boolean value
+     */
     public boolean emailValidation(String name){
         String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
         pattern = Pattern.compile(regx);
         matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+    /* method to validation of mobile number data
+     * @param name return boolean value
+     */
+    public boolean numberValidation(String number){
+        String regx = "^[0-9]{2}\\s[0-9]{10}";
+        pattern = Pattern.compile(regx);
+        matcher = pattern.matcher(number);
         return matcher.matches();
     }
 }

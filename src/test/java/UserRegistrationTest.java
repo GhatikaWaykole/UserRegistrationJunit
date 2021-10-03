@@ -16,4 +16,14 @@ public class UserRegistrationTest {
         boolean result = userRegistration.lastName("Abcd");
         Assert.assertTrue(result);
     }
+    @Test
+    public void giveEmailVaule_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.emailValidation("abc@yahoo.com");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void giveEmailValues_WhenNotProper_ShouldReturnFalse(){
+        boolean result = userRegistration.emailValidation("abc..@radif.com");
+        Assert.assertFalse(result);
+    }
 }

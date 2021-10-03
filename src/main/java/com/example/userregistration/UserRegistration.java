@@ -45,13 +45,13 @@ public class UserRegistration {
         matcher = pattern.matcher(number);
         return matcher.matches();
     }
-    /* methodlogin to validation of login value should have minimum eight value data
+    /* methodlogin to validation of login value should have minimum eight and atleast one upper value data
      * @param name return boolean value
      */
     public boolean loginValidation(String name){
-        String regex = "[A-Za-z0-9]{8,}";
+        String regex = "^[A-Z]{1}[A-Za-z0-9]{8,}";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(name);
         return matcher.matches();
     }
-}
+    }

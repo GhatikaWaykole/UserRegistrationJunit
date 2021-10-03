@@ -43,7 +43,7 @@ public class UserRegistrationTest {
     }
     @Test
     public void givenLoginValues_WhenNotProper_ShouldReturnFalse() {
-        boolean result = userRegistration.loginValidation("Asjspnm");
+        boolean result = userRegistration.loginValidation("asjseropnm");
         Assert.assertFalse(result);
     }
 }

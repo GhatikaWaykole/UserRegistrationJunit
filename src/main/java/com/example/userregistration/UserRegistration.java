@@ -45,11 +45,25 @@ public class UserRegistration {
         matcher = pattern.matcher(number);
         return matcher.matches();
     }
-    /* methodlogin to validation of login value should have minimum eight and atleast one upper value data
+    /* methodlogin to validation of login value should have minimum eight value data
      * @param name return boolean value
      */
-    public boolean loginValidation(String name){
-        String regex = "^[A-Z]{1}[A-Za-z0-9]{8,}";
+    public boolean loginRule1Validation(String name){
+        String regex = "^[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+    //create method to validation of login have atleast one upper value data
+    public boolean loginRule2Validation(String name){
+        String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(name);
+        return matcher.matches();
+    }
+    //create method to validation one or greater digit value data
+    public boolean loginRule3Validation(String name){
+        String regex = "(?=.*[A-Z]){1}(?=.*[0-9])(?=.*[a-z]).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(name);
         return matcher.matches();

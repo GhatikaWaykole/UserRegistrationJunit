@@ -35,4 +35,17 @@ public class UserRegistrationException extends Exception {
             throw new UserRegisrationCreateException("Enter proper name value");
         }
     }
-}
+    /* create method to check data and throw null pointer exception
+     @param name return boolean value
+     */
+    public boolean name(String name) throws UserRegisrationCreateException{
+        try{
+            String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
+            pattern = Pattern.compile(regex);
+            matcher  = pattern.matcher(name);
+            return matcher.matches();
+        } catch (NullPointerException e) {
+            throw new UserRegisrationCreateException("Enter proper value");
+        }
+    }
+    }

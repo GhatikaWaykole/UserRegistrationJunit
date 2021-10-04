@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.rmi.server.ExportException;
+
 public class UserRegistrationExceptionTest {
     UserRegistrationException userRegistrationException;
     @Before
@@ -36,6 +38,17 @@ public class UserRegistrationExceptionTest {
                 Assert.assertEquals(true,result);
             else if(result == false)
                 Assert.assertEquals(false,result);
+        } catch (UserRegisrationCreateException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void getUserValue_WhenNull_ShouldReturnException(){
+        try{
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegisrationCreateException.class);
+            boolean result = userRegistrationException.name(null);
+
         } catch (UserRegisrationCreateException e) {
             e.printStackTrace();
         }

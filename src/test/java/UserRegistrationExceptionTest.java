@@ -53,4 +53,14 @@ public class UserRegistrationExceptionTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void getNumberValue_WhenNull_ShouldReturnException(){
+        try{
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegisrationCreateException.class);
+            boolean result = userRegistrationException.numberCheck(null);
+        } catch (UserRegisrationCreateException e) {
+            e.printStackTrace();
+        }
+    }
 }

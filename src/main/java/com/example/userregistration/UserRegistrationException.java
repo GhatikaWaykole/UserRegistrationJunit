@@ -4,7 +4,6 @@ package com.example.userregistration;
  */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class UserRegistrationException extends Exception {
     Pattern pattern;
@@ -36,7 +35,7 @@ public class UserRegistrationException extends Exception {
         }
     }
     /* create method to check data and throw null pointer exception
-     @param name return boolean value
+     * @param name return boolean value
      */
     public boolean name(String name) throws UserRegisrationCreateException{
         try{
@@ -46,6 +45,19 @@ public class UserRegistrationException extends Exception {
             return matcher.matches();
         } catch (NullPointerException e) {
             throw new UserRegisrationCreateException("Enter proper value");
+        }
+    }
+    /* create method numberCheck and throw null pointer exception
+     * @param number return boolean
+     */
+    public boolean numberCheck(String number) throws UserRegisrationCreateException {
+        try{
+            String regex = "^[0-9]{2}\\s[0-9]{10}";
+            pattern = Pattern.compile(regex);
+            matcher = pattern.matcher(number);
+            return matcher.matches();
+        } catch (NullPointerException e) {
+            throw new UserRegisrationCreateException("Number should be proper");
         }
     }
     }

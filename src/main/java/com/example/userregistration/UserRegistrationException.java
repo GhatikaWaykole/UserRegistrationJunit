@@ -22,4 +22,17 @@ public class UserRegistrationException extends Exception {
             throw new UserRegisrationCreateException("Enter proper name");
         }
     }
+        /* createlastname method to check the name and throw null pointer exception
+         * @param name return boolean
+         */
+    public boolean lastName(String name) throws UserRegisrationCreateException{
+        try {
+            String regex = "^[A-Z]{1}[a-z]{2,}";
+            pattern = Pattern.compile(regex);
+            matcher = pattern.matcher(name);
+            return matcher.matches();
+        } catch (NullPointerException e){
+            throw new UserRegisrationCreateException("Enter proper name value");
+        }
+    }
 }

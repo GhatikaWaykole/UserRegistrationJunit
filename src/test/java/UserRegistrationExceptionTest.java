@@ -63,4 +63,14 @@ public class UserRegistrationExceptionTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void getLoginValue_WhenNull_ShouldReturnException() throws UserRegisrationCreateException {
+        try{
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(UserRegisrationCreateException.class);
+            boolean result = userRegistrationException.loginValidation(null);
+        } catch (UserRegisrationCreateException e){
+            e.printStackTrace();
+        }
+    }
 }

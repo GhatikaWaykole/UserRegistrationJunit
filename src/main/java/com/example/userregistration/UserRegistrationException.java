@@ -60,4 +60,17 @@ public class UserRegistrationException extends Exception {
             throw new UserRegisrationCreateException("Number should be proper");
         }
     }
+    /* createloginmethod and throw null exception
+     * @param login return boolean
+     */
+    public boolean loginValidation(String name) throws UserRegisrationCreateException {
+        try {
+            String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
+            pattern = Pattern.compile(regex);
+            matcher = pattern.matcher(name);
+            return matcher.matches();
+        } catch (NullPointerException e){
+            throw new UserRegisrationCreateException("login data should be proper");
+        }
+    }
     }

@@ -15,24 +15,21 @@ public class UserRegistrationExceptionTest {
         userRegistrationException = new UserRegistrationException();
     }
     @Test
-    public void getUserValue_WhenNotProper_ShouldReturnException(){
+    public void getUserValue_WhenNotProper_ShouldReturnException() {
         try {
-            ExpectedException expectedRule = ExpectedException.none();
-            expectedRule.expect(UserRegisrationCreateException.class);
-           boolean result = userRegistrationException.firstName(null);
-           if(result == true)
-            Assert.assertEquals(true, result);
-           else if(result == false)
-               Assert.assertEquals(false,result);
-        } catch (UserRegisrationCreateException e) {
+            boolean result = userRegistrationException.firstName(null);
+            if (result == true)
+                Assert.assertEquals(true, result);
+            else if (result == false)
+                Assert.assertEquals(false, result);
+        }
+        catch(UserRegisrationCreateException e){
             e.printStackTrace();
         }
     }
     @Test
     public void getUserLastNameValue_WhenNull_ShouldReturnException(){
         try{
-            ExpectedException exceptionRule = ExpectedException.none();
-            exceptionRule.expect(UserRegisrationCreateException.class);
             boolean result = userRegistrationException.lastName(null);
             if (result == true)
                 Assert.assertEquals(true,result);
@@ -45,8 +42,6 @@ public class UserRegistrationExceptionTest {
     @Test
     public void getUserValue_WhenNull_ShouldReturnException(){
         try{
-            ExpectedException exceptionRule = ExpectedException.none();
-            exceptionRule.expect(UserRegisrationCreateException.class);
             boolean result = userRegistrationException.name(null);
 
         } catch (UserRegisrationCreateException e) {
@@ -56,8 +51,6 @@ public class UserRegistrationExceptionTest {
     @Test
     public void getNumberValue_WhenNull_ShouldReturnException(){
         try{
-            ExpectedException exceptionRule = ExpectedException.none();
-            exceptionRule.expect(UserRegisrationCreateException.class);
             boolean result = userRegistrationException.numberCheck(null);
         } catch (UserRegisrationCreateException e) {
             e.printStackTrace();
@@ -66,8 +59,6 @@ public class UserRegistrationExceptionTest {
     @Test
     public void getLoginValue_WhenNull_ShouldReturnException() throws UserRegisrationCreateException {
         try{
-            ExpectedException exceptionRule = ExpectedException.none();
-            exceptionRule.expect(UserRegisrationCreateException.class);
             boolean result = userRegistrationException.loginValidation(null);
         } catch (UserRegisrationCreateException e){
             e.printStackTrace();
